@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% block title%}
+series Lista de info
+{% endblock %}
+
+
+{% block content %}
+
+<h1> Episodio {{item.episode}} : Temporada {{item.season}} </h1>
+
+    <ul>
+        <h3> {{item.title}}</h3>
+
+    {% for element in item.characters %}
+            <p>  <a href = "/character/{{item.episode_id}}/{{element}}"> {{element}}</a> </p>
+
+    {% endfor %}
+
+    <p2> {{item.air_date}}</p2>
+    </ul>
+<a href="/home">  Home </a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% block title%}
+series Lista de info
+{% endblock %}
+
+
+{% block content %}
+<h1> Episodios Temporada {{temp}} </h1>
+    <ul>
+    {% for element in episodes%}  
+        <h4> <a href = "/episode/{{element.episode_id}}">Episodio</a> {{element.episode}} || {{element.title}} </h4>
+    {% endfor %}
+    </ul>
+<a href="/home">  Home </a>
+{% endblock %}

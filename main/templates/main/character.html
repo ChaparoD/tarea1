@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% block title%}
+series Lista de info
+{% endblock %}
+
+
+{% block content %}
+
+<h1 style="margin-left:400px">  {{info.portrayed}}   ||   {{info.name}}    ||    {{info.nickname}}</h1>
+<h4 style="margin-left:400px"> Actor(a) en : {{info.category}} </h4>
+<img style="margin-left:400px" src = {{info.img}} >
+    <ul> 
+        <h4> Ocuppation(s):</h4>       
+    {% for element in info.occupation%}  
+        <li>  {{element}} </li>
+    {% endfor %}
+    </ul>
+    <h4> Estado: {{info.status}}</h4>
+    <ul> 
+        <h4> Temporadas de aparición en Breaking Bad:</h4>       
+    {% for element in info.appearance%}  
+        <li><a href = 'breakingbad/{{element}}'>  Temporada: {{element}}</a> </li>
+    {% endfor %}
+    </ul>
+    <ul> 
+        <h4> Temporadas de aparición en Better Call Soul</h4>       
+    {% for element in info.better_call_saul_appearance%}  
+        <li><a href = 'bettercallsaul/{{element}}'>  Temporada: {{element}}</a> </li>
+    {% endfor %}
+    </ul>
+    <ul> 
+        <h4 style="margin-left:250px"> Citas destacadas: </h4>       
+    {% for cita in citas%}  
+        <li style="margin-left:250px">  {{cita.quote}}</a> </li>
+    {% endfor %}
+    </ul>
+
+    
+
+<a href="/home">  Home </a>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% block title%}
+series Lista de info
+{% endblock %}
+
+
+{% block content %}
+<h1> Breaking Bad </h1>
+    <ul>
+   
+    {% for element in temporadas.bb %}  
+        <p style="margin-up:2.5em"></p>
+        <li><a href= "/breakingbad/{{element}}">  Temporada : {{element}}  </a> </li>
+        
+    {% endfor %}
+    </ul>
+
+<h1> Better Call Soul </h1>
+    <ul>
+   
+    {% for element in temporadas.bcs %}  
+        <p style="margin-up:2.5em"></p>
+        <li><a href= "/bettercallsaul/{{element}}">  Temporada : {{element}}  </a> </li>
+        
+    {% endfor %}
+    </ul>
+{% endblock %}
